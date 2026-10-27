@@ -1,0 +1,365 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: "Jua", "Gowun Dodum", sans-serif;
+    --font-sans: "Gowun Dodum", "Nunito", system-ui, sans-serif;
+    --radius: 1rem;
+    --background: oklch(96% 0.03 230);
+    --foreground: oklch(30% 0.06 255);
+    --card: oklch(100% 0 0);
+    --card-foreground: oklch(30% 0.06 255);
+    --popover: oklch(100% 0 0);
+    --popover-foreground: oklch(30% 0.06 255);
+    --primary: oklch(66% 0.17 245);
+    --primary-deep: oklch(52% 0.16 250);
+    --primary-foreground: oklch(100% 0 0);
+    --secondary: oklch(93% 0.05 160);
+    --secondary-foreground: oklch(35% 0.08 160);
+    --muted: oklch(96% 0.015 240);
+    --muted-foreground: oklch(52% 0.04 250);
+    --accent: oklch(90% 0.08 85);
+    --accent-foreground: oklch(35% 0.08 60);
+    --destructive: oklch(65% 0.2 25);
+    --destructive-foreground: oklch(100% 0 0);
+    --border: oklch(88% 0.03 240);
+    --input: oklch(88% 0.03 240);
+    --ring: oklch(66% 0.17 245);
+    
+    --sky: oklch(78% 0.12 235);
+    --mint: oklch(80% 0.13 165);
+    --peach: oklch(80% 0.12 40);
+    --lilac: oklch(78% 0.1 300);
+    --sun: oklch(85% 0.16 85);
+
+    --shadow-card: 0 6px 0 var(--border), 0 18px 30px -12px oklch(50% 0.1 250 / 0.3);
+    --shadow-lift: 0 10px 0 var(--border), 0 26px 40px -14px oklch(50% 0.1 250 / 0.4);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--background);
+    color: var(--foreground);
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.game-bg {
+  background: radial-gradient(circle at 10% 0%, oklch(92% 0.06 200) 0, transparent 40%),
+              radial-gradient(circle at 90% 20%, oklch(94% 0.05 320) 0, transparent 35%),
+              radial-gradient(circle at 50% 100%, oklch(94% 0.07 150) 0, transparent 45%),
+              var(--background);
+}
+
+.text-shadow-game {
+  text-shadow: 0 3px oklch(30% 0.08 255 / 0.5);
+}
+
+.tone-sky {
+  background: linear-gradient(160deg, oklch(86% 0.1 230), var(--sky));
+  color: white;
+}
+.tone-sun {
+  background: linear-gradient(160deg, oklch(92% 0.14 90), var(--sun));
+  color: oklch(35% 0.1 70);
+}
+.tone-mint {
+  background: linear-gradient(160deg, oklch(88% 0.11 170), var(--mint));
+  color: white;
+}
+.tone-peach {
+  background: linear-gradient(160deg, oklch(88% 0.11 45), var(--peach));
+  color: white;
+}
+.tone-lilac {
+  background: linear-gradient(160deg, oklch(86% 0.09 305), var(--lilac));
+  color: white;
+}
+
+.btn-3d {
+  font-family: var(--font-display);
+  cursor: pointer;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.25rem;
+  font-size: 1.05rem;
+  transition: transform 0.12s, box-shadow 0.12s;
+  display: inline-flex;
+}
+
+.btn-3d:active {
+  transform: translateY(4px);
+}
+
+.btn-3d-lg {
+  border-radius: 1.25rem;
+  padding: 1rem 2rem;
+  font-size: 1.35rem;
+}
+
+.btn-3d-primary {
+  background: linear-gradient(180deg, oklch(74% 0.15 240), var(--primary));
+  color: var(--primary-foreground);
+  box-shadow: 0 5px 0 var(--primary-deep), 0 10px 18px -6px oklch(50% 0.16 250 / 0.6);
+}
+
+.btn-3d-primary:active {
+  box-shadow: 0 1px 0 var(--primary-deep);
+}
+
+.btn-3d-ghost {
+  background: var(--card);
+  color: var(--foreground);
+  box-shadow: 0 5px 0 var(--border), 0 8px 14px -6px oklch(50% 0.1 250 / 0.3);
+}
+
+.btn-3d-ghost:active {
+  box-shadow: 0 1px 0 var(--border);
+}
+
+.btn-3d-sun {
+  background: linear-gradient(180deg, oklch(92% 0.16 88), var(--sun));
+  color: oklch(35% 0.1 70);
+  box-shadow: 0 5px 0 oklch(70% 0.15 75), 0 10px 18px -6px oklch(50% 0.12 80 / 0.4);
+}
+.btn-3d-sun:active {
+  box-shadow: 0 1px 0 oklch(70% 0.15 75);
+}
+
+.card-3d {
+  background: var(--card);
+  border: 3px solid var(--card);
+  box-shadow: var(--shadow-card);
+  border-radius: 1.75rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-3d:hover {
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-4px);
+}
+
+.icon-3d {
+  color: var(--card);
+  border-radius: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  box-shadow: inset 0 -6px oklch(0% 0 0 / 0.15), inset 0 4px oklch(100% 0 0 / 0.45), 0 6px 14px -4px oklch(40% 0.1 250 / 0.4);
+}
+
+.icon-3d svg {
+  filter: drop-shadow(0 2px oklch(0% 0 0 / 0.2));
+}
+
+.status-chip {
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: inline-block;
+}
+
+.status-done {
+  color: oklch(42% 0.1 160);
+  background: oklch(93% 0.07 160);
+}
+
+.status-progress {
+  color: oklch(45% 0.12 75);
+  background: oklch(94% 0.08 85);
+}
+
+.status-new {
+  color: var(--primary-deep);
+  background: oklch(93% 0.05 235);
+}
+
+.hud-panel {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 3px solid var(--card);
+  box-shadow: var(--shadow-card);
+  background: oklch(100% 0 0 / 0.88);
+  border-radius: 1.5rem;
+}
+
+.world-frame {
+  border: 5px solid var(--card);
+  box-shadow: var(--shadow-lift);
+  border-radius: 2rem;
+}
+
+.world-overlay {
+  background: linear-gradient(transparent 45%, oklch(30% 0.08 255 / 0.65));
+}
+
+.world-label {
+  background: white;
+  border: 3px solid var(--card);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: all 0.2s ease-out;
+}
+
+.world-label-active {
+  background: var(--sun);
+  transform: scale(1.15);
+  border-color: white;
+}
+
+.gauge {
+  background: var(--muted);
+  border-radius: 999px;
+  height: 0.85rem;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px oklch(40% 0.05 250 / 0.2);
+}
+
+.gauge-fill {
+  background: linear-gradient(90deg, var(--mint), var(--sky));
+  border-radius: 999px;
+  height: 100%;
+  box-shadow: inset 0 -3px oklch(0% 0 0 / 0.1), inset 0 2px oklch(100% 0 0 / 0.5);
+  transition: width 0.4s ease-out;
+}
+
+/* Whack-a-mole game styles */
+.mole-hole {
+  background: radial-gradient(ellipse at 50% 85%, oklch(35% 0.05 60) 0 35%, var(--mint) 36%);
+  border-radius: 50% 50% 1.5rem 1.5rem;
+  box-shadow: 0 6px oklch(65% 0.12 165);
+}
+
+.mole {
+  width: 76%;
+  height: 76%;
+  transition: top 0.18s ease-out;
+  position: absolute;
+  top: 100%;
+  left: 12%;
+}
+
+.mole-up {
+  top: 18%;
+}
+
+.mole-rim {
+  background: oklch(55% 0.08 60);
+  border-radius: 50%;
+  height: 22%;
+  position: absolute;
+  bottom: 4%;
+  left: 8%;
+  right: 8%;
+  box-shadow: inset 0 4px oklch(45% 0.07 60);
+  pointer-events: none;
+}
+
+/* Maze styles */
+.maze-cell {
+  background: oklch(90% 0.08 150);
+  border-radius: 0.8rem;
+  box-shadow: inset 0 -4px oklch(80% 0.1 150);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease-out;
+}
+
+.maze-cell:hover {
+  background: oklch(94% 0.08 150);
+  transform: translateY(-2px);
+}
+
+.maze-rock {
+  background: var(--muted);
+  box-shadow: inset 0 -4px 0 var(--border);
+  font-size: 1.5rem;
+}
+
+/* Food drag styles */
+.food-item {
+  cursor: grab;
+  touch-action: none;
+  filter: drop-shadow(0 6px 4px oklch(40% 0.05 250 / 0.3));
+  font-size: 3rem;
+  line-height: 1;
+  transition: transform 0.15s;
+  user-select: none;
+}
+
+.food-item:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.food-dragging {
+  cursor: grabbing;
+  z-index: 20;
+  transform: translate(-50%, -50%) scale(1.25) rotate(-8deg);
+}
+
+/* Shape match styles */
+.shape-dot {
+  background: var(--muted);
+  box-shadow: 0 4px 0 var(--border);
+  border-radius: 1rem;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.shape-dot:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes chomp {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1, 0.92);
+  }
+}
+
+@keyframes pop {
+  0% { transform: scale(0.6); opacity: 0; }
+  70% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.chomp {
+  animation: chomp 0.35s ease-in-out;
+}
+
+.animate-pop {
+  animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}

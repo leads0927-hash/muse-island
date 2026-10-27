@@ -1,0 +1,121 @@
+import { Mission, Badge, DailyQuest, ZoneConfig } from '../types/game';
+
+export const INITIAL_MISSIONS: Mission[] = [
+  {
+    id: 'click',
+    title: '클릭 탐험',
+    description: '하늘을 날아다니는 3D 별을 클릭해서 잡아보세요!',
+    goal: '움직이는 별 10개 잡기',
+    difficulty: 1,
+    status: 'new',
+    progress: 0,
+    tone: 'sky',
+    xp: 50,
+    iconName: 'MousePointer',
+  },
+  {
+    id: 'double-click',
+    title: '더블클릭 보물찾기',
+    description: '튀어나온 두더지를 빠르게 두 번 눌러 쏙 들어가게 해요.',
+    goal: '두더지 8마리 잡기',
+    difficulty: 1,
+    status: 'new',
+    progress: 0,
+    tone: 'sun',
+    xp: 80,
+    iconName: 'Sparkles',
+  },
+  {
+    id: 'drag',
+    title: '드래그 퍼즐',
+    description: '먹이를 꾹 누른 채 끌어서 친구 입에 쏙 넣어줘요.',
+    goal: '먹이 6개 먹여주기',
+    difficulty: 2,
+    status: 'new',
+    progress: 0,
+    tone: 'mint',
+    xp: 120,
+    iconName: 'Hand',
+  },
+  {
+    id: 'paint',
+    title: '디지털 그림 놀이터',
+    description: '같은 도형끼리 선으로 잇고, 자유롭게 그림도 그려요.',
+    goal: '같은 도형 4쌍 연결하기',
+    difficulty: 2,
+    status: 'new',
+    progress: 0,
+    tone: 'peach',
+    xp: 150,
+    iconName: 'Palette',
+  },
+  {
+    id: 'right-click',
+    title: '우클릭 이동 모험',
+    description: '오른쪽 버튼을 누른 곳으로 캐릭터가 이동해요.',
+    goal: '깃발 3개 모으기',
+    difficulty: 3,
+    status: 'new',
+    progress: 0,
+    tone: 'lilac',
+    xp: 200,
+    iconName: 'Compass',
+  },
+];
+
+export const INITIAL_BADGES: Badge[] = [
+  {
+    id: 'first_click',
+    name: '첫 클릭',
+    description: '클릭 탐험에서 별을 모두 잡았어요!',
+    tone: 'sky',
+    got: false,
+    iconName: 'MousePointer',
+  },
+  {
+    id: 'treasure_hunter',
+    name: '보물 사냥꾼',
+    description: '더블클릭으로 두더지를 모두 잡았어요!',
+    tone: 'sun',
+    got: false,
+    iconName: 'Sparkles',
+  },
+  {
+    id: 'puzzle_master',
+    name: '퍼즐 마스터',
+    description: '드래그 퍼즐로 친구에게 먹이를 주었어요!',
+    tone: 'mint',
+    got: false,
+    iconName: 'Hand',
+  },
+  {
+    id: 'artist',
+    name: '예술가 쥐',
+    description: '도형을 잇고 알록달록 그림을 완성했어요!',
+    tone: 'peach',
+    got: false,
+    iconName: 'Palette',
+  },
+  {
+    id: 'navigator',
+    name: '마우스 마스터',
+    description: '우클릭으로 미로의 모든 깃발을 찾았어요!',
+    tone: 'lilac',
+    got: false,
+    iconName: 'Compass',
+  },
+];
+
+export const INITIAL_QUESTS: DailyQuest[] = [
+  { id: 'q1', text: '클릭 탐험 1회 플레이', done: false },
+  { id: 'q2', text: '두더지 8마리 잡기', done: false },
+  { id: 'q3', text: '드래그 퍼즐 도전하기', done: false },
+];
+
+export const ISLAND_ZONES: ZoneConfig[] = [
+  { id: 'click', title: '별빛 천문대 (클릭)', kind: 'click', coords: [-4.2, -1.5] },
+  { id: 'double-click', title: '두더지 풍차 (더블클릭)', kind: 'double-click', coords: [-1.5, -4.5] },
+  { id: 'drag', title: '치즈 베이커리 (드래그)', kind: 'drag', coords: [3.2, -3.4] },
+  { id: 'paint', title: '컬러 화방 (그리기)', kind: 'paint', coords: [4.4, 1.4] },
+  { id: 'right-click', title: '나침반 등대 (우클릭)', kind: 'right-click', coords: [-3.2, 3.4] },
+];
